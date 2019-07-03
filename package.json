@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@kubernetes/client-node": "^0.10.2",
+    "aws-sdk": "^2.486.0",
+    "aws-signature-v4": "^1.4.0",
+    "base64url": "^3.0.1",
+    "querystring": "^0.2.0",
+    "winston": "^3.2.1"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
+  }
+}
