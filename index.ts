@@ -233,14 +233,11 @@ const getBearerToken = async clusterId => {
             } ${JSON.stringify(err)}`
           );
         })
-    : await sts
-        .getSessionToken({})
-        .promise()
-        .catch(err => {
-          throw new Error(
-            `Failed to get session token: ${JSON.stringify(err)}`
-          );
-        });
+    : { Credentials: {
+      AccessKeyId: AWS.config.credentials.accessKeyId,
+      SecretAccessKey: AWS.config.credentials.secretAccessKey,
+      SessionToken: AWS.config.credentials.sessionToken
+    }}
   console.log(`AWS_ACCESS_KEY_ID: ${awsCreds.Credentials.AccessKeyId}`);
 
   // create pre-signed url token for aws-iam-authenticator

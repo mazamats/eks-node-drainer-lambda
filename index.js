@@ -259,16 +259,15 @@ var getBearerToken = function (clusterId) { return __awaiter(_this, void 0, void
                     })];
             case 1:
                 _a = _b.sent();
-                return [3 /*break*/, 4];
-            case 2: return [4 /*yield*/, sts
-                    .getSessionToken({})
-                    .promise()["catch"](function (err) {
-                    throw new Error("Failed to get session token: " + JSON.stringify(err));
-                })];
+                return [3 /*break*/, 3];
+            case 2:
+                _a = { Credentials: {
+                        AccessKeyId: AWS.config.credentials.accessKeyId,
+                        SecretAccessKey: AWS.config.credentials.secretAccessKey,
+                        SessionToken: AWS.config.credentials.sessionToken
+                    } };
+                _b.label = 3;
             case 3:
-                _a = _b.sent();
-                _b.label = 4;
-            case 4:
                 awsCreds = _a;
                 console.log("AWS_ACCESS_KEY_ID: " + awsCreds.Credentials.AccessKeyId);
                 fullUrl = generatePresignedSTSURL({
